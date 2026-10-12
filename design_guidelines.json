@@ -1,0 +1,166 @@
+{
+  "app_name": "DANZ STORE V5",
+  "personality": "7 Dark-First Utility with 6 Glass/Luxe elevated surfaces",
+  "personality_one_liner": "A high-octane, futuristic command center that puts game accounts in the spotlight with deep obsidian backgrounds and striking neon red accents.",
+  "color": {
+    "surface": "#0A0A0A",
+    "onSurface": "#FFFFFF",
+    "surfaceSecondary": "#1A1A1E",
+    "onSurfaceSecondary": "#F4F4F5",
+    "surfaceTertiary": "#27272A",
+    "onSurfaceTertiary": "#E4E4E7",
+    "surfaceInverse": "#FAFAFA",
+    "onSurfaceInverse": "#0A0A0A",
+    "brand": "#FF003C",
+    "onBrand": "#FFFFFF",
+    "brandPrimary": "#E60036",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#FF3366",
+    "onBrandSecondary": "#FFFFFF",
+    "brandTertiary": "#33000C",
+    "onBrandTertiary": "#FFB3C6",
+    "success": "#00E676",
+    "onSuccess": "#000000",
+    "warning": "#FFC400",
+    "onWarning": "#000000",
+    "error": "#FF1744",
+    "onError": "#FFFFFF",
+    "info": "#00E5FF",
+    "onInfo": "#000000",
+    "border": "#27272A",
+    "borderStrong": "#3F3F46",
+    "divider": "#1F1F22",
+    "muted": "#A1A1AA"
+  },
+  "typography": {
+    "displayFontFamily": "Rajdhani",
+    "textFontFamily": "Manrope",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Use intentional spacing (md/lg) to prevent cramping while maintaining a tactical, dashboard-like feel. Avoid unnecessary empty spaces. Form elements should be tight, but content blocks should breathe.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": "0",
+  "navigation": "bottom_tabs",
+  "icon_set": "Phosphor",
+  "glassmorphism": {
+    "enabled": true,
+    "do's": [
+      "Use blur on bottom tab bar to make it float above scrolling content.",
+      "Use frosted glass on sticky headers when scrolling in the Home or Product Detail pages.",
+      "Apply glass effects on floating action buttons (FABs) or the primary CTA fixed at the bottom."
+    ],
+    "dont's": [
+      "Do not use glass on standard product cards or list rows; rely on solid surfaceSecondary.",
+      "Do not use blur behind form inputs or body text."
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Beranda",
+      "purpose": "Showcase featured games, trending accounts, and current promotions in an immersive layout.",
+      "states": {
+        "loading": "Dark skeleton loaders matching the neon-accented cards.",
+        "empty": "No promotions available yet.",
+        "error": "Failed to load the feed. Retry button with neon outline."
+      },
+      "layout": "Hero banner with abstract neon red lighting at the top (with top-to-bottom gradient scrim). A horizontal scrolling 'Game Categories' shelf underneath. Below that, a 2-column grid of 'Trending Accounts' (surfaceSecondary cards) with edge-to-edge thumbnails."
+    },
+    {
+      "name": "Kategori",
+      "purpose": "A structured grid allowing users to quickly find specific games to buy or sell accounts.",
+      "states": {
+        "loading": "Skeleton grids.",
+        "empty": "No categories found.",
+        "error": "Could not load categories."
+      },
+      "layout": "Grid-based layout with 2 or 3 columns. Each tile uses a game logo PNG on a brandTertiary or surfaceSecondary background. Clean, scannable, high-contrast."
+    },
+    {
+      "name": "Jual Akun",
+      "purpose": "Streamlined, tactical form for sellers to list their game accounts for moderation and sale.",
+      "states": {
+        "loading": "Centered spinner when submitting.",
+        "empty": "Select a game first to start selling.",
+        "error": "Submission failed. Highlight missing fields in red."
+      },
+      "layout": "Single-column form. Labels above inputs. Use surfaceTertiary for input backgrounds to create depth against surface. Submit CTA is sticky at the bottom."
+    },
+    {
+      "name": "Favorit",
+      "purpose": "Quick access to saved game accounts users are considering.",
+      "states": {
+        "loading": "List skeleton.",
+        "empty": "A stylized abstract illustration indicating no favorites saved yet. 'Start exploring to save your dream accounts.'",
+        "error": "Could not load favorites."
+      },
+      "layout": "Vertical list of cards. Each card has a thumbnail on the left, details on the right, and a neon red heart icon."
+    },
+    {
+      "name": "Profil",
+      "purpose": "User command center for order tracking, payment management, and entry to Admin Dashboard.",
+      "states": {
+        "loading": "Loading user stats.",
+        "empty": "Not logged in. Show login CTA.",
+        "error": "Could not load profile."
+      },
+      "layout": "Top section features user avatar and stats (Balance, Active Listings). Middle section is a grid of quick actions (Pesanan, Pembayaran). Bottom section contains list rows for settings and the Admin Dashboard entry point."
+    }
+  ],
+  "images": {
+    "hero_banner": {
+      "url": "https://images.unsplash.com/photo-1605362001336-f91645086f32?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhcmslMjBmdXR1cmlzdGljJTIwbmVvbiUyMHJlZCUyMGxpZ2h0aW5nJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3OTE2MTA0NzZ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Abstract dark futuristic neon red lighting background"
+    },
+    "game_pubg": {
+      "url": "https://images.unsplash.com/photo-1646950887163-25b5bff58eed?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwxfHxQVUJHJTIwbW9iaWxlJTIwbG9nbyUyMHBuZ3xlbnwwfHx8fDE3OTE2MTA0NzZ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "PUBG Mobile background"
+    },
+    "game_genshin": {
+      "url": "https://images.unsplash.com/photo-1661347999669-e935ec73f76b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwxfHxHZW5zaGluJTIwaW1wYWN0JTIwbG9nbyUyMHBuZ3xlbnwwfHx8fDE3OTE2MTA0NzZ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Genshin Impact Logo"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Follow the '7 Dark-First Utility' combined with '6 Glass/Luxe' UI rules. Ensure the UI feels like a premium gaming dashboard (deep blacks #0A0A0A, metallic grays #1A1A1E, and neon red #FF003C accents).",
+    "Always format prices in Rupiah as 'Rp X.XXX.XXX'.",
+    "Use 'Rajdhani' for impactful display headers (stats, prices, section titles) and 'Manrope' for readable body text.",
+    "Do NOT use pure black with pure white text to avoid eye strain; use the defined surface/onSurface pairs.",
+    "Implement a sticky bottom primary CTA where necessary (e.g., Jual Akun submit, Checkout), hovering above scrolling content using frosted glass techniques.",
+    "Use the gradient scrim (transparent to surfaceInverse) pattern strictly over all hero and game background images before laying text on them.",
+    "For the bottom navigation, strictly implement the 5 requested tabs: Beranda, Kategori, Jual Akun, Favorit, Profil.",
+    "Web research indicates immersive horizontal scrolling shelves for games and grid-based inventory layouts. Utilize surfaceSecondary cards with 12px border radius for account listings.",
+    "If game logos are missing or fail to load, fall back to initials within a brandTertiary-tinted square, not generic icons."
+  ]
+}
